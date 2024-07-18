@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: springboot-jdbi
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    initialization-mode: always
+    initialize: true
+    hikari:
+      connectionTimeout: 20000
+      maximumPoolSize: 5
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+    generate-ddl: false
+  logging:
+    level:
+      org:
+        springframework:
+          jdbc:
+            core: DEBUG
+server:
+  port: 12005

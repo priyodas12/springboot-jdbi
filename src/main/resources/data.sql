@@ -1,11 +1,13 @@
 DO $$
 BEGIN
-    RAISE NOTICE 'Executing schema.sql';
+    'Executing schema.sql at %', current_timestamp;
 END $$;
 
 CREATE TABLE products (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(100) NOT NULL
+    name VARCHAR(100) NOT NULL,
+    product_origin VARCHAR(20) FOREIGN KEY ,
+    product_price NUMERIC FOREIGN KEY
 );
 
 CREATE TABLE product_origin (
